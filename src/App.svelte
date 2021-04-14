@@ -17,6 +17,15 @@
 			return hStr + mStr;
 		}
 	}
+
+	function chargingText(): string {
+		const time = $battery.chargingTime;
+		return time == Infinity ? "" : ` (${pretty(time)} until full)`;
+	}
+	function dischargingText(): string {
+		const time = $battery.dischargingTime;
+		return time == Infinity ? "" : ` (${pretty(time)} remaining)`;
+	}
 </script>
 
 <main>
@@ -25,10 +34,11 @@
 	{:else}
 		<h1>Level: {$battery.level * 100}%</h1>
 		{#if $battery.charging}
-			<p>Charging ({pretty($battery.chargingTime)} until full)</p>
+			<p>Charging{chargingText()}</p>
 		{:else}
-			<p>Discharging ({pretty($battery.dischargingTime)} remaining)</p>
+			<p>Discharging{dischargingText()}</p>
 		{/if}
+		<p>{$battery.temperature}°C</p>
 		<p>Battery health : {$battery.health}</p>
 	{/if}
 </main>
