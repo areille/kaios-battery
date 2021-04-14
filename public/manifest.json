@@ -1,0 +1,24 @@
+{
+    "version": "0.0.1",
+    "name": "Battery",
+    "description": "A Battery app for KaiOS",
+    "type": "web",
+    "launch_path": "/index.html",
+    "icons": {
+        "56": "/assets/icons/battery_56.png",
+        "112": "/assets/icons/battery_112.png",
+        "128": "/assets/icons/battery_128.png"
+    },
+    "developer": {
+        "name": "Augustin Reille",
+        "url": "http://areille.com"
+    },
+    "locales": {
+        "en-US": {
+            "name": "Battery",
+            "subtitle": "A Battery app",
+            "description": "A Battery app for KaiOS"
+        }
+    },
+    "default_locale": "en-US"
+}
